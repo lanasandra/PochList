@@ -98,7 +98,6 @@ let breakLine = document.querySelector("hr");
      });
  
  
- 
      function cleanData () {
      
        authorInput.value = "";
@@ -185,7 +184,6 @@ function searchBooks (bookTitleSearched, authorSearched) {
     }
 }
 
-  
 
 function displayBooks(book, isInPochlist){ 
   
@@ -205,8 +203,7 @@ function displayBooks(book, isInPochlist){
         } else {
 
           bookItem.setAttribute ('data-id', bookId);  
-          bookItemsPochlist.appendChild(bookItem);
-          
+          bookItemsPochlist.appendChild(bookItem);  
          
         }
         
