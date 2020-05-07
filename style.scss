@@ -32,6 +32,11 @@ body
 	width: 140px;
 	color: white;
 	text-align: center;
+	transform: scale(1);
+    transition: transform 400ms;
+    &:hover {
+        transform: scale(1.07);
+	}
 }
 
 #addABook
@@ -43,6 +48,11 @@ label
 {
 	font-size: 0.9em;
 }
+
+#errorMessage {
+	margin-top: 0px;
+	margin-bottom: 5px;
+  }
 
 #buttons
 {
@@ -84,13 +94,78 @@ label
 	margin-bottom: 15px;
 }
 
-#bookTitleItem {
-	height:30px;
-	border:2px solid red;
-}
 #search, #results
 {
 	display: none;
+}
+
+.bookItems
+{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+margin: auto;
+justify-content: center;
+
+}
+
+.bookItem
+{
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  text-align: left;
+  background-color: #EBEBEB;
+  margin:15px;
+  padding: 10px;
+}
+
+i:hover
+{
+	color: #1DACA0;
+	cursor: help;
+	transform: scale(1.20);
+}
+
+
+p
+{
+  margin-bottom: 0px;
+  
+}
+
+
+.headerSection
+{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 80px;
+  
+}
+
+h1
+{
+  font-size: 1.2em;
+  margin-top: 0px;
+  margin-right: 10px;
+}
+
+.bookDescriptionItem
+{
+  margin-bottom: 10px;
+}
+.bookCover
+{
+  display: block;
+  margin: 0 auto;
+}
+
+.bookCoverBlock
+{
+  margin-block-start: auto;
+  
 }
 
 
@@ -101,8 +176,8 @@ label
    		display: flex;
     	flex-direction: column;
     	vertical-align: flex-start;
-      	width: 92%;
-    	margin: 4px auto;
+      	width: 90%;
+    	margin: 5px auto;
     	
     }
  
@@ -117,14 +192,26 @@ label
 		width: 100%;
 		margin-bottom: 20px;
     }
+
+	.bookItems 
+	{
+   		 width: 95%;
+    	 margin: 5px auto;
+  	}
+
+	.bookItem 
+	{
+  		width: 45%;
+  		margin: 3px auto;
+  		padding: 5px;
+  	}
 }
 
-@media all and (max-device-width: 425px) {
-
-	.bookItem {
-  
-	  width: 95%;
-	  margin: 5px auto;
-	}
-  
+@media all and (max-device-width: 425px) 
+{
+  .bookItem 
+  {
+    width: 95%;
+    margin: 5px auto;
   }
+}
