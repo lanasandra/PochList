@@ -87,6 +87,75 @@ label {
 }
 
 
+.bookItems
+{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+margin: auto;
+justify-content: center;
+
+}
+
+.bookItem
+{
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  text-align: left;
+  background-color: #EBEBEB;
+  margin:15px;
+  padding: 10px;
+}
+
+i:hover
+{
+  color: #1DACA0;
+  cursor: pointer;
+}
+
+
+p
+{
+  margin-bottom: 0px;
+  
+}
+
+
+.headerSection
+{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 80px;
+  
+}
+
+h1
+{
+  font-size: 1.2em;
+  margin-top: 0px;
+  margin-right: 10px;
+}
+
+.bookDescriptionItem
+{
+  margin-bottom: 10px;
+}
+.bookCover
+{
+  display: block;
+  margin: 0 auto;
+}
+
+.bookCoverBlock
+{
+  margin-block-start: auto;
+  
+}
+
+
 @media all and (max-device-width: 768px) {
   #buttons, #blocFields {
     display: -webkit-box;
@@ -108,4 +177,26 @@ label {
     width: 100%;
     margin-bottom: 20px;
   }
+
+  .bookItems {
+    width: 95%;
+    margin: 5px auto;
+  }
+  .bookItem {
+  
+  width: 45%;
+  margin: 3px auto;
+  padding: 5px;
 }
+}
+
+@media all and (max-device-width: 425px) {
+
+  .bookItem {
+
+    width: 95%;
+    margin: 5px auto;
+  }
+
+}
+/*# sourceMappingURL=style.css.map */
