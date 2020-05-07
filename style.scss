@@ -118,3 +118,13 @@ label
 		margin-bottom: 20px;
     }
 }
+
+@media all and (max-device-width: 425px) {
+
+	.bookItem {
+  
+	  width: 95%;
+	  margin: 5px auto;
+	}
+  
+  }
