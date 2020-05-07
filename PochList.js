@@ -92,11 +92,31 @@ let breakLine = document.querySelector("hr");
         addBookButton.style.display = "none";
     });
 
-    var bookTitleSearched;
-    var authorSearched;
-    var isNewSearch;
-    var isInPochlist;
-   
+    resetButton.addEventListener("click", () => {
+        cleanData ();
+       
+     });
+ 
+ 
+     function cleanData () {
+     
+       authorInput.value = "";
+       bookTitleInput.value ="";
+       addBookButton.style.display = "block"; 
+       searchForm.style.display = "none";
+       resultSection.style.display = "none";
+       errorMessage.style.display = "none";
+       bookItems.innerHTML = ""; 
+       
+       if(isInPochlist) displayBooks (book, true);
+ 
+     }
+       
+     var bookTitleSearched;
+     var authorSearched;
+     var isNewSearch;
+     var isInPochlist;
+
     searchButton.addEventListener('click', () => {
         
       if((bookTitleInput.value == '') || (authorInput.value == '')) {
@@ -164,7 +184,6 @@ function searchBooks (bookTitleSearched, authorSearched) {
     }
 }
 
-  
 
 function displayBooks(book, isInPochlist){ 
   
@@ -184,8 +203,7 @@ function displayBooks(book, isInPochlist){
         } else {
 
           bookItem.setAttribute ('data-id', bookId);  
-          bookItemsPochlist.appendChild(bookItem);
-          
+          bookItemsPochlist.appendChild(bookItem);  
          
         }
         
@@ -261,3 +279,42 @@ function displayBooks(book, isInPochlist){
       });
      
     }  
+    document.querySelector('input').addEventListener('focus', () => {
+
+        if(!isNewSearch) {
+          bookTitleInput.value="";
+          authorInput.value="";
+        }
+    });
+  
+  function saveItemStorage (bookId, book)
+   {
+  
+    if(sessionStorage.getItem(bookId)) {
+  
+     alert ("Vous ne pouvez pas ajouter deux fois le même livre");
+  
+    } else {
+  
+      sessionStorage.setItem (bookId, JSON.stringify(book));
+      alert ("Livre ajouté dans votre Poch'List !");
+      displayBooks (book, true);
+      
+    }
+  
+  }
+  
+  function deleteItemStorage (bookId){
+  
+    sessionStorage.removeItem (bookId);
+    alert ("Livre supprimé de votre Poch'List !");
+    document.body.querySelector("div[data-id='"+bookId+"']").remove();
+    
+  }
+  
+  window.onload = function(){
+    
+    Object.keys(sessionStorage).forEach( bookId => {
+    displayBooks (JSON.parse(sessionStorage.getItem(bookId)), true);
+    })
+  }
