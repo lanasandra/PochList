@@ -32,7 +32,6 @@ body
   text-align: center;
   transform: scale(1);
   transition: transform 400ms;
-  
 }
 
 #addABook:hover, #searching:hover, #reset:hover 
@@ -58,7 +57,6 @@ label
 
 #buttons 
 {
-
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -110,7 +108,8 @@ label
   justify-content: center;
 }
 
-.bookItem {
+.bookItem 
+{
   display: flex;
   flex-direction: column;
   width: 40%;
