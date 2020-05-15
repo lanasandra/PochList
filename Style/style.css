@@ -197,7 +197,7 @@ h1
   }
 }
 
-@media all and (max-width: 425px) 
+@media all and (max-width: 480px) 
 {
   .bookItem 
   {
