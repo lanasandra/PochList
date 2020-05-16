@@ -254,14 +254,18 @@ function displayBooks(book, isInPochlist){
         bookCoverImg.className          = "bookCover";
         bookCoverBlock.appendChild(bookCoverImg);
 
-    if(bookTitle.length < 80) {
+    if(bookTitle.length < 85) {
         bookTitleItem.innerHTML         = "Titre: "+bookTitle;
     }   else {
-        bookTitleItem.innerHTML         = "Titre: "+bookTitle.substr(0, 76) +  " [...]";
+        bookTitleItem.innerHTML         = "Titre: "+bookTitle.substr(0, 85) +  "...";
     }
     bookIdItem.innerHTML                = "Id: "+bookId;
     bookAuthorItem.innerHTML            = "Auteur: "+bookAuthor;
-    bookDescriptionItem.innerHTML       = "Description: "+bookDescription.substr(0,200) + " [...]";
+    if (bookDescription.length < 200) {
+      bookDescriptionItem.innerHTML     = "Description: "+bookDescription;
+    } else {
+      bookDescriptionItem.innerHTML     = "Description: "+bookDescription.substr(0,200) + " [...]";
+    }
     bookCoverImg.src                    = bookCoverLink;
     bookCoverImg.alt                    = bookTitle;
    
