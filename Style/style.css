@@ -161,7 +161,6 @@ h1
 .bookCoverBlock 
 {
   margin-block-start: auto;
-  writing-mode: horizontal-tb;
 }
 
 @media all and (max-width: 768px)
