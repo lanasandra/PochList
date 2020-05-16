@@ -137,7 +137,7 @@ let breakLine = document.querySelector("hr");
 
 
 function searchBooks (bookTitleSearched, authorSearched) {
-  const url = 'https://www.googleapis.com/books/v1/volumes?q=' + bookTitleSearched + '+inauthor:'+ authorSearched +'&key=AIzaSyCnc1UAUzaVJF7MnVL49PUaRdHplB0daDg';
+  const url = 'https://www.googleapis.com/books/v1/volumes?q=' + bookTitleSearched + '+inauthor:'+ authorSearched +'&key=yourAPIKey';
   
   const encodedURL = encodeURI(url);
   let request = new XMLHttpRequest(); // We create an object that will allow us to make requests
